@@ -5,6 +5,7 @@ window.onload = () => {
     setupListeners()
 
     updateBackgroundColor()
+    updateBookForm()
 }
 
 function populateTime() {
@@ -24,6 +25,25 @@ function setupListeners() {
     settingsDiv.addEventListener("click", () => {
         openSettingsDialog()
     })
+    document.querySelector("#one-way-trip-radio").addEventListener("change", () => {
+        updateBookForm()
+    })
+    document.querySelector("#round-trip-radio").addEventListener("change", () => {
+        updateBookForm()
+    })
+}
+
+function updateBookForm() {
+    tripIsOneWay = document.querySelector("#one-way-trip-radio").checked
+    tripIsRound = document.querySelector("#round-trip-radio").checked
+    returnDateGroup = document.querySelector("#return-date-group")
+    if (tripIsOneWay) {
+        returnDateGroup.style.display = 'none';
+        document.querySelector('#return-date').value = '';
+    } else if (tripIsRound) {
+        returnDateGroup.style.display = 'block';
+    }
+
 }
 
 function openSettingsDialog() {
