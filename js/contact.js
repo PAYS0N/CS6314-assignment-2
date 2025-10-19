@@ -1,19 +1,19 @@
 window.onload = () => {
-    setupContactListeners()
+    setupCarsListeners()
 }
 
-function setupContactListeners() {
+function setupCarsListeners() {
     document.querySelector('#contact-form').addEventListener("submit", (e) => {
-        submitContactForm(e)
+        submitCarsForm(e)
     })
 }
 
-function displayContactResults(fn, ln, p, g, e, c) {
+function displayCarsResults(fn, ln, p, g, e, c) {
     const outputDiv = document.querySelector("#contact-output")
     outputDiv.textContent = "Name: " + fn + " " + ln + "\nPhone: " + p + "\nGender: " + g + "\nEmail: " + e + "\nComment: " + c
 }
 
-function submitContactForm(e) {
+function submitCarsForm(e) {
     e.preventDefault()
     const formData = new FormData(document.querySelector("#contact-form"));
     const firstName = formData.get("first-name")
@@ -44,6 +44,6 @@ function submitContactForm(e) {
         alert("Comment must be at least 10 characters long.")
     }
     else {
-        displayContactResults(firstName, lastName, phone, formData.get("gender"), email, comment)
+        displayCarsResults(firstName, lastName, phone, formData.get("gender"), email, comment)
     }
 }

@@ -68,6 +68,10 @@ body {
     width: 20%;
 }
 
+#passenger-icon {
+    cursor: pointer;
+}
+
 .form-output {
     white-space: pre;
 }
