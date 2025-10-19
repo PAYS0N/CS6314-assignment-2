@@ -55,22 +55,27 @@ body {
     flex-direction: column;
     gap: 1rem;
 
+    justify-content: center;
     align-items: center;
     text-align: center;
 
     padding: 1rem;
 
-    background-color: rgb(173, 144, 144);
+    background-color: rgba(168, 212, 152, 1);
 }
 
 #book-button {
     width: 20%;
 }
 
+.form-output {
+    white-space: pre;
+}
+
 #side {
     padding: 1rem;
 
-    background-color: rgb(173, 209, 175);
+    background-color: rgba(87, 161, 72, 1);
 }
 
 #footer {
