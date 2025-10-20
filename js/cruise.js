@@ -8,7 +8,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         const destination = $("#destination").val();
-        const departure = $("#departure").val();
+        const departure = new Date($("#departure").val());
         const minDuration = parseInt($("#min-duration").val(), 10);
         const maxDuration = parseInt($("#max-duration").val(), 10);
         const adults = parseInt($("#adults").val(), 10);
