@@ -1,17 +1,27 @@
 window.addEventListener("load", () => {
+    developDom()
     setupContactListeners()
-    // developDom()
 });
 
 function developDom() {
     const main = document.querySelector("#main")
     const form = document.createElement("form")
+    form.textContent = "Cars"
     form.id = "cars-form"
     main.appendChild(form)
     form.appendChild(makeStandardFormGroup("text", "city", "City: "))
     form.appendChild(makecarDropdown())
     form.appendChild(makeStandardFormGroup("date", "checkin-date", "Check-in: "))
     form.appendChild(makeStandardFormGroup("date", "checkout-date", "Check-out: "))
+    const button = document.createElement("button")
+    button.type = "submit"
+    button.id = "cars-button"
+    button.textContent = "Submit"
+    form.appendChild(button)
+    const divOut = document.createElement("div")
+    divOut.classList.add("form-output")
+    divOut.id = "cars-output"
+    main.appendChild(divOut)
     
 }
 
@@ -28,6 +38,36 @@ function makeStandardFormGroup(type, name, labeltext) {
     input.name = name
     input.required = true
     group.appendChild(input)
+    return group
+}
+
+function makecarDropdown() {
+    const group = document.createElement("div")
+    group.classList.add("form-group")
+    const label = document.createElement("label")
+    label.for = "car-type"
+    label.textContent = "Select Car Type:"
+    group.appendChild(label)
+    const select = document.createElement("select")
+    select.id = "car-type"
+    select.name = "car-type"
+    const option1 = document.createElement("option")
+    option1.value = "economy"
+    option1.textContent = "Economy"
+    const option2 = document.createElement("option")
+    option2.value = "suv"
+    option2.textContent = "SUV"
+    const option3 = document.createElement("option")
+    option3.value = "compact"
+    option3.textContent = "Compact"
+    const option4 = document.createElement("option")
+    option4.value = "midsize"
+    option4.textContent = "Midsize"
+    select.appendChild(option1)
+    select.appendChild(option2)
+    select.appendChild(option3)
+    select.appendChild(option4)
+    group.appendChild(select)
     return group
 }
 
