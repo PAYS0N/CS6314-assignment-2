@@ -21,7 +21,7 @@ function submitContactForm(e) {
     const phone = formData.get("phone")
     const email = formData.get("email")
     const comment = formData.get("comment")
-    const nameRegex = /^[A-Z][a-z]+$/
+    const nameRegex = /^[A-Z][a-zA-Z]+$/
     const phoneRegex = /^\(\s?\d{3}\s?\)\s?\d{3}\s?-\s?\d{4}$/
     const emailRegex = /^.*@.*\..*$/
     const commentRegex = /^.{10}.*$/
