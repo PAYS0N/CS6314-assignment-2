@@ -22,9 +22,8 @@ function isValidDate(dateStr) {
     return givenDate >= startDate && givenDate <= endDate
 }
 
-function calculateRooms(adults, children) {
-    const totalGuests = adults + children
-    return Math.ceil(totalGuests / 2)
+function calculateRooms(a, c) {
+    return Math.ceil((+a + +c) / 2)
 }
 
 function submitStaysForm(e) {
@@ -51,15 +50,14 @@ function submitStaysForm(e) {
         alert("Check-out must be after check-in.")
     }
     else {
-        const roomsNeeded = calculateRooms(adults, children)
-
         const staysOutput = document.querySelector("#stays-output")
+        console.log(adults, children)
         staysOutput.textContent = 
             "City: " + city +
             "\nCheck-in: " + checkin +
             "\nCheck-out: " + checkout +
             "\nAdults: " + adults + ", Children: " + children + ", Infants: " + infants +
-            "\nRooms needed: " + roomsNeeded;
+            "\nRooms needed: " + calculateRooms(adults, children);
 
     }
 }
