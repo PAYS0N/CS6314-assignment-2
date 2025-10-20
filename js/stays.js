@@ -1,8 +1,8 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     document.querySelector("#stays-form").addEventListener("submit", (e) => {
         submitStaysForm(e)
     });
-};
+});
 
 function isValidCity(city) {
     city = city.trim()

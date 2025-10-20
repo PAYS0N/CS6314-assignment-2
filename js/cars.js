@@ -1,6 +1,6 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     setupCarsListeners()
-}
+});
 
 function setupCarsListeners() {
     document.querySelector('#cars-form').addEventListener("submit", (e) => {

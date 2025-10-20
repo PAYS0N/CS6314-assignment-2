@@ -1,11 +1,11 @@
-window.onload = () => {
+window.addEventListener("load", () => {
  
     populateTime()
 
     setupListeners()
 
     updateBackgroundColor()
-}
+})
 
 function populateTime() {
     const timeDiv = document.querySelector("#time")

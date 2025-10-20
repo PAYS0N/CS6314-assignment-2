@@ -1,7 +1,8 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     setupBookListeners()
     updateBookForm()
-}
+});
+
 
 function setupBookListeners() {
     document.querySelector("#one-way-trip-radio").addEventListener("change", () => {

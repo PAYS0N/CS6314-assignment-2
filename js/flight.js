@@ -1,6 +1,6 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     setupFlightListeners();
-};
+});
 
 function setupFlightListeners() {
     document.querySelector("#passenger-icon").addEventListener("click", () => {
