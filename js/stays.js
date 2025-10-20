@@ -51,7 +51,6 @@ function submitStaysForm(e) {
     }
     else {
         const staysOutput = document.querySelector("#stays-output")
-        console.log(adults, children)
         staysOutput.textContent = 
             "City: " + city +
             "\nCheck-in: " + checkin +
