@@ -1,10 +1,39 @@
 window.addEventListener("load", () => {
-    setupCarsListeners()
+    setupContactListeners()
+    // developDom()
 });
 
-function setupCarsListeners() {
+function developDom() {
+    const main = document.querySelector("#main")
+    const form = document.createElement("form")
+    form.id = "cars-form"
+    main.appendChild(form)
+    form.appendChild(makeStandardFormGroup("text", "city", "City: "))
+    form.appendChild(makecarDropdown())
+    form.appendChild(makeStandardFormGroup("date", "checkin-date", "Check-in: "))
+    form.appendChild(makeStandardFormGroup("date", "checkout-date", "Check-out: "))
+    
+}
+
+function makeStandardFormGroup(type, name, labeltext) {
+    const group = document.createElement("div")
+    group.classList.add("form-group")
+    const label = document.createElement("label")
+    label.for = name
+    label.textContent = labeltext
+    group.appendChild(label)
+    const input = document.createElement("input")
+    input.type = type
+    input.id = name
+    input.name = name
+    input.required = true
+    group.appendChild(input)
+    return group
+}
+
+function setupContactListeners() {
     document.querySelector('#cars-form').addEventListener("submit", (e) => {
-        submitCarsForm(e)
+        submitContactForm(e)
     })
 }
 
@@ -15,12 +44,12 @@ function isValidDate(dateStr) {
     return givenDate >= startDate && givenDate <= endDate
 }
 
-function displayCarsResults(c, t, chi, cho) {
+function displayContactResults(c, t, chi, cho) {
     const outputDiv = document.querySelector("#cars-output")
     outputDiv.textContent = "City: " + c + "\nType: " + t + "\nCheck in: " + chi + "\nCheck Out: " + cho
 }
 
-function submitCarsForm(e) {
+function submitContactForm(e) {
     e.preventDefault()
     const formData = new FormData(document.querySelector("#cars-form"));
     const city = formData.get("city")
@@ -35,6 +64,6 @@ function submitCarsForm(e) {
         alert("Must check in from Sep 1, 2024 to Dec 1, 2024.")
     }
     else {
-        displayCarsResults(city, type, checkin, checkout)
+        displayContactResults(city, type, checkin, checkout)
     }
 }
