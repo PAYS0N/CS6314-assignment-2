@@ -30,7 +30,7 @@ function calculateRooms(adults, children) {
 function submitStaysForm(e) {
     e.preventDefault()
 
-    const formData = new FormData(document.querySelector("#contact-form"));
+    const formData = new FormData(document.querySelector("#stays-form"));
     const city = formData.get("city")
     const checkin = formData.get("checkin-date")
     const checkout = formData.get("checkout-date")
